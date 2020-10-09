@@ -9,7 +9,7 @@ const port = 5000
 
 server.use(express.json())
 server.use(projectsRouter)
-server.use("/actions", actionsRouter)
+server.use(actionsRouter)
 
 server.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);

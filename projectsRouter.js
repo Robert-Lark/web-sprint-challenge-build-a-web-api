@@ -16,16 +16,16 @@ router.get("/", (req, res) => {
             res.status(404).json({ message: "does not exist" });
         });
 });
-// router.get("/actions", (req, res) => {
-// 	helpersActions
-// 		.get()
-// 		.then((response) => {
-// 			res.status(200).json(response);
-// 		})
-// 		.catch((error) => {
-// 			res.status(404).json({ message: "does not exist" });
-// 		});
-// });
+router.get("/:id", (req, res) => {
+	helpersActions
+		.get(req.params.id)
+		.then((response) => {
+			res.status(200).json(response);
+		})
+		.catch((error) => {
+			res.status(404).json({ message: "does not exist" });
+		});
+});
 //COMPLETED
 router.post("/", (req, res) => {
     helpers
